@@ -31,3 +31,21 @@ func reverseList2(head *ListNode) *ListNode {
 
 	return newHead
 }
+
+//头结点插入法
+func reverseList3(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	cur := head
+	next := cur.Next
+	for next != nil {
+		cur.Next = next.Next
+		next.Next = head
+		head = next
+		next = cur.Next
+	}
+
+	return head
+}
