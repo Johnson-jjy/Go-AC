@@ -61,6 +61,35 @@ func binary2(array []int, target int) int {
 	return -1
 }
 
+// 左开右开
+func binary3(array []int, target int) int {
+	var left, right, middle, count int
+
+	left = -1
+	right = len(array)
+	count = 0
+
+	fmt.Println("以下为左开右开测试：")
+
+	for left + 1 != right {
+		count++
+		middle = left + (right - left) / 2
+
+		fmt.Printf("第%d次计算middle:%d;此时left为:%d;right为:%d\n",
+			count, middle, left, right )
+
+		if array[middle] > target {
+			right = middle
+		} else if array[middle] < target {
+			left = middle
+		} else {
+			return middle
+		}
+	}
+
+	return -1
+}
+
 // 1. 求等于x的最小的index，不存在返回-1
 func binaryFindEqualMinIndex(array []int, target int) int {
 	var left, middle, right, ans int
@@ -177,35 +206,6 @@ func binaryFindLessEqualMinIndex(array []int, target int) int {
 	}
 
 	return right
-}
-
-// 左开右开
-func binary3(array []int, target int) int {
-	var left, right, middle, count int
-
-	left = -1
-	right = len(array)
-	count = 0
-
-	fmt.Println("以下为左开右开测试：")
-
-	for left + 1 != right {
-		count++
-		middle = left + (right - left) / 2
-
-		fmt.Printf("第%d次计算middle:%d;此时left为:%d;right为:%d\n",
-			count, middle, left, right )
-
-		if array[middle] > target {
-			right = middle
-		} else if array[middle] < target {
-			left = middle
-		} else {
-			return middle
-		}
-	}
-
-	return -1
 }
 
 func main()  {
