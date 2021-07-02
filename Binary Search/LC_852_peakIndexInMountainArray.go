@@ -1,21 +1,22 @@
 package Binary_Search
 
 func peakIndexInMountainArray(arr []int) int {
-	var left, right int
-	left = 0
-	right = len(arr) - 1
-	mid := 0
+	left := 1
+	right := len(arr) - 2
+
+	ans := right
 	for left <= right {
-		mid = (right - left) / 2 + left
-		if arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1] {
-			return mid
-		} else if arr[mid - 1] > arr[mid] {
-			right = mid
+		mid := left + (right - left) / 2
+
+		if arr[mid] < arr[mid + 1] {
+			left = mid + 1
 		} else {
-			left = mid
+			ans = mid
+			right = mid - 1
 		}
 	}
-	return mid
+
+	return ans
 }
 
 // 官方题解：更快，涉及sort源码，需理解
