@@ -9,6 +9,6 @@ go语言刷LC题解 -- 直接复制的lc解题记录，如果想在本地IDE上�
 
 注：每道题的命名规则如下： OJ_题号_题目名称（小驼峰命名法）
 目前已使用的OJ简写如下：
-LC：LeetCode
-CIG：Coding Interview Guide（程序员面试金典）
-
+LC: LeetCode
+CIG: Coding Interview Guide（程序员面试金典）
+LCP: 力扣杯

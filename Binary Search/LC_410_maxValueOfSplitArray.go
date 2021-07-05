@@ -28,6 +28,7 @@ func satisfyM2(arr []int, cur int, M int) bool {
 		if arr[i] > cur {
 			return false
 		}
+		// 用试探的方法
 		if sum + arr[i] > cur {
 			sum = 0
 			i--
