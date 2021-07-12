@@ -1,5 +1,6 @@
 package offer
 
+// 注意 i%2 为0或1时的细微不同处理
 func fib(n int) int {
 	const mod = 1000000007
 	if n == 0 || n == 1 {
