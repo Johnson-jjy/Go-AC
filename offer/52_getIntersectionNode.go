@@ -7,6 +7,7 @@ package offer
  *     Next *ListNode
  * }
  */
+// 快慢指针
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	cur1 := headA
 	cur2 := headB
