@@ -19,7 +19,7 @@ func reversePairs1(nums []int) int {
 func mergeSort(nums []int) []int{
 	if len(nums) <= 1 {
 		return nums
-	}
+	}// 注意此处的 <= 1, 若为 == 0的话,则会出现runtime error->left和right的分配会出问题
 
 	p := len(nums) / 2
 	left := mergeSort(nums[:p])
