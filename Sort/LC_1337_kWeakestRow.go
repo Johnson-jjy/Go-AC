@@ -115,3 +115,19 @@ func kWeakestRows(mat [][]int, k int) []int {
 
 	return ans[:k]
 }
+
+
+
+//store := make(map[int][][]int, len(times))
+//for i := 0; i < len(times); i++ {
+//cur := times[i][0]
+//distance := make([]int, 2)
+//distance[0] = times[i][1]
+//distance[1] = times[i][2]
+//_, ok := store[cur]
+//if ok {
+//store[cur] = append(store[cur], distance)
+//} else {
+//store[cur] = distance
+//}
+//}
