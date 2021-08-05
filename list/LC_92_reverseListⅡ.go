@@ -21,3 +21,53 @@ func reverseBetween(head *ListNode, left, right int) *ListNode {
 	return dummyNode.Next
 }
 
+
+
+
+// 08/05 bug free:保留好相关节点即可 -> 也可以直接换,不扫描
+func reverseBetween2(head *ListNode, left int, right int) *ListNode {
+	if left == right {
+		return head
+	}
+
+	dummy := &ListNode{
+		-1,
+		nil,
+	}
+	dummy.Next = head
+	pre := dummy
+	for i := 1; i < left; i++ {
+		pre = pre.Next
+	}
+	start := pre.Next
+	pre.Next = nil
+	oldtail := pre
+	pre = start
+	for i := left; i < right; i++ {
+		pre = pre.Next
+	}
+	var end *ListNode
+	if pre.Next != nil {
+		end = pre.Next
+		pre.Next = nil
+	}
+	newhead, tail := reverseNormal(start)
+	oldtail.Next = newhead
+	tail.Next = end
+
+	return dummy.Next
+}
+
+func reverseNormal(head *ListNode) (newhead *ListNode, tail *ListNode) {
+	if head == nil || head.Next == nil {
+		return head, head
+	}
+
+	next := head.Next
+	head.Next = nil
+	newhead, tail = reverseNormal(next)
+	tail.Next = head
+	tail = head
+
+	return
+}
