@@ -5,6 +5,7 @@ import (
 	"math"
 	"sort"
 	"strconv"
+	"strings"
 )
 
 //栈相关
@@ -112,8 +113,35 @@ func testCopy()  {
 	fmt.Println(c)
 }
 
-//skill
-func testSkill()  {
+//string
+func testString()  {
+	// 字符串初始化
+	s1 := "hello world"
+	s2 := `This is a
+	multiline
+	string`
+	fmt.Println(s1)
+	fmt.Println(s2)
+
+	// 访问字符串
+	first1 := s1[0]
+	s22 := []byte(s1)
+	first2 := s22[0]
+	fmt.Println(first1)
+	fmt.Println(first2)
+
+	// 修改字符串
+	t1 := []byte(s1)
+	t1[0] = 'H'
+	fmt.Println(t1)
+	t2 := string(t1)
+	fmt.Println(t2)
+
+	// 拼接字符串
+	t3 := t2+ t2 // 效率低
+	t4 := strings.Join([]string{t2}, t2)
+	fmt.Println(t3, t4)
+
 	//byte转数字
 	s := "123456" //s[0]类型是byte
 	num := int(s[0] - '0') //1
@@ -140,6 +168,6 @@ func main()  {
 	testMath()
 	//copy
 	testCopy()
-	//skill
-	testSkill()
+	//string
+	testString()
 }
