@@ -1,5 +1,7 @@
 package cig
 
+// 理解题意:对于PopAt操作,需要用到切片拼接,注意相关写法
+// cap为0时,需要另做处理
 type StackOfPlates struct {
 	store [][]int
 	single int
@@ -14,7 +16,7 @@ func Constructor3(cap int) StackOfPlates {
 }
 
 func (this *StackOfPlates) Push(val int)  {
-	if this.single == 0 {
+	if this.single == 0 { // cap为0, 直接返回, 不做其他处理
 		return
 	}
 	n := len(this.store) - 1
@@ -26,7 +28,6 @@ func (this *StackOfPlates) Push(val int)  {
 		this.store[n] = append(this.store[n], val)
 	}
 }
-
 
 func (this *StackOfPlates) Pop() int {
 	n := len(this.store) - 1
@@ -44,7 +45,6 @@ func (this *StackOfPlates) Pop() int {
 	return res
 }
 
-
 func (this *StackOfPlates) PopAt(index int) int {
 	n := len(this.store) - 1
 	if n == -1 || index > n {
@@ -57,7 +57,8 @@ func (this *StackOfPlates) PopAt(index int) int {
 	m := len(cur) - 1
 	res := cur[m]
 	if m == 0 {
-		this.store = append(this.store[:index], append([][]int{}, this.store[index+1:]...)...)
+		// 对于临时append的使用,第一个参数依然需要是高维,两次...降维
+		this.store = append(this.store[:index], append([][]int{}, this.store[index+1:]...)...) // 注意拼接的写法
 	} else {
 		this.store[index] = (this.store[index])[:m]
 	}
