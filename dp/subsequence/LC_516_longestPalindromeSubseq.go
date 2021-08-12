@@ -1,5 +1,6 @@
 package subsequence
 
+// 注: 子序列的题目一般喜欢多开一个位置 -> 遍历顺序与传统的不同,需要在有了递推公式后进一步判断
 func longestPalindromeSubseq(s string) int {
 	m := len(s)
 	dp := make([][]int, m + 1)
