@@ -79,9 +79,11 @@ func testSort(){
 		fmt.Printf("%s\t", value)
 	}
 
-	//自定义排序
+	//自定义排序 -> 注:没有针对bytes的函数,只能用该自定义函数
 	sort.Slice(sI, func(i, j int)bool{return sI[i] < sI[j]})
 	fmt.Printf("Ints: %v\n", sI)
+
+	// sort.SliceStable 在排序切片时会保留相等元素的原始顺序
 }
 
 //math
@@ -125,7 +127,7 @@ func testString()  {
 
 	// 访问字符串
 	first1 := s1[0]
-	s22 := []byte(s1)
+	s22 := []byte(s1) // 注意这里是小括号不是大括号
 	first2 := s22[0]
 	fmt.Println(first1)
 	fmt.Println(first2)
