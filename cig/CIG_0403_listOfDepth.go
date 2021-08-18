@@ -1,4 +1,4 @@
-package Binary_Tree
+package cig
 
 
 // Definition for a binary tree node.
@@ -34,7 +34,7 @@ func listOfDepth(tree *TreeNode) []*ListNode {
 		dummy := cur
 		for i := 0; i < size; i++ {
 			node := queue[0]
-			curNode := &ListNode {
+			curNode := &ListNode{
 				node.Val,
 				nil,
 			}

@@ -1,4 +1,4 @@
-package Binary_Tree
+package cig
 
 /**
  * Definition for a binary tree node.
@@ -108,7 +108,7 @@ func inorderSuccessor1(root *TreeNode, p *TreeNode) *TreeNode {
 	return pre
 }
 
-func findtarget(root *TreeNode, t *TreeNode) *TreeNode{
+func findtarget(root *TreeNode, t *TreeNode) *TreeNode {
 	if root == nil || root == t {
 		return root
 	}

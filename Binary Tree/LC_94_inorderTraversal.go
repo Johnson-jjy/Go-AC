@@ -1,5 +1,7 @@
 package Binary_Tree
 
+import "Go-AC/cig"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -10,13 +12,13 @@ package Binary_Tree
  */
 
 // 解法一: 迭代版本
-func inorderTraversal1(root *TreeNode) []int {
+func inorderTraversal1(root *cig.TreeNode) []int {
 	res := make([]int, 0)
 	if root == nil {
 		return res
 	}
 
-	stack := make([]*TreeNode, 0)
+	stack := make([]*cig.TreeNode, 0)
 
 	for len(stack) > 0 || root != nil {
 		for root != nil {
@@ -33,14 +35,14 @@ func inorderTraversal1(root *TreeNode) []int {
 }
 
 // 解法二: 递归版本
-func inorderTraversal2(root *TreeNode) []int {
+func inorderTraversal2(root *cig.TreeNode) []int {
 	res := make([]int, 0)
 	if root == nil {
 		return res
 	}
 
-	var inOrder func(root *TreeNode)
-	inOrder = func(root *TreeNode) {
+	var inOrder func(root *cig.TreeNode)
+	inOrder = func(root *cig.TreeNode) {
 		if root == nil {
 			return
 		}

@@ -1,5 +1,7 @@
 package Binary_Tree
 
+import "Go-AC/cig"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -10,11 +12,11 @@ package Binary_Tree
  */
 
 // 类105
-func buildTree106(inorder []int, postorder []int) *TreeNode {
+func buildTree106(inorder []int, postorder []int) *cig.TreeNode {
 	if len(postorder) == 0 {
 		return nil
 	}
-	root := &TreeNode{
+	root := &cig.TreeNode{
 		postorder[len(postorder) - 1],
 		nil,
 		nil,

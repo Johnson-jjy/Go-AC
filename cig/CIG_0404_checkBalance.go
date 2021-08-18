@@ -1,4 +1,4 @@
-package Binary_Tree
+package cig
 
 /**
  * Definition for a binary tree node.

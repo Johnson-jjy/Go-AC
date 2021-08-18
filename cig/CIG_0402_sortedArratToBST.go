@@ -1,4 +1,4 @@
-package Binary_Tree
+package cig
 
 // 思路:每次二分找头结点;另可利用go的切片性质直接递归
 var store []int

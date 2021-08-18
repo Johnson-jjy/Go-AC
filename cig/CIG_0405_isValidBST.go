@@ -1,6 +1,8 @@
-package Binary_Tree
+package cig
 
-import "math"
+import (
+	"math"
+)
 
 /**
  * Definition for a binary tree node.

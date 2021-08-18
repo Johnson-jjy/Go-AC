@@ -1,5 +1,7 @@
 package Binary_Tree
 
+import "Go-AC/cig"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -12,14 +14,14 @@ package Binary_Tree
 // 注:本质上还是BFS遍历,但添加顺序不同,难点在于对append的使用
 // 解1: append头插入 -> 对于第一个参数,将cur升维,用匿名初始化法; 对第二个参数,将res"降维",后接"..."
 // 解2: 像BFS一样正常添加,然后对于结果数组进行逆序
-func levelOrderBottom(root *TreeNode) [][]int {
+func levelOrderBottom(root *cig.TreeNode) [][]int {
 	res := make([][]int, 0)
 
 	if root == nil {
 		return res
 	}
 
-	queue := make([]*TreeNode, 1)
+	queue := make([]*cig.TreeNode, 1)
 	queue[0] = root
 
 	for len(queue) != 0 {

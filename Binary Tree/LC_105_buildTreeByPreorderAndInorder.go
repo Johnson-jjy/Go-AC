@@ -1,5 +1,7 @@
 package Binary_Tree
 
+import "Go-AC/cig"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -10,12 +12,12 @@ package Binary_Tree
  */
 
 // 抓住前序和中序的特点，结合go传切片即可
-func buildTree(preorder []int, inorder []int) *TreeNode {
+func buildTree(preorder []int, inorder []int) *cig.TreeNode {
 	if len(preorder) == 0 {
 		return nil
 	}
 	// 注意,这列preorder数组中是int值,故需要新构建一个节点
-	root := &TreeNode{
+	root := &cig.TreeNode{
 		preorder[0],
 		nil,
 		nil,

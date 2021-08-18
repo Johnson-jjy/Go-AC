@@ -1,5 +1,7 @@
 package Binary_Tree
 
+import "Go-AC/cig"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -8,13 +10,13 @@ package Binary_Tree
  *     Right *TreeNode
  * }
  */
-func zigzagLevelOrder(root *TreeNode) [][]int {
+func zigzagLevelOrder(root *cig.TreeNode) [][]int {
 	res := make([][]int, 0)
 	if root == nil {
 		return res
 	}
 
-	queue := make([]*TreeNode, 1)
+	queue := make([]*cig.TreeNode, 1)
 	queue[0] = root
 	flag := 0
 

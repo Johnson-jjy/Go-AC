@@ -1,6 +1,9 @@
 package Binary_Tree
 
-import "math"
+import (
+	"Go-AC/cig"
+	"math"
+)
 
 /**
  * Definition for a binary tree node.
@@ -15,7 +18,7 @@ import "math"
 // 注: 1. res124要取最小,因为节点值可以为负数; 2. 对于要更新全局变量的情况,则肯定要新写函数进行递归
 var res124 int
 
-func maxPathSum(root *TreeNode) int {
+func maxPathSum(root *cig.TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -26,7 +29,7 @@ func maxPathSum(root *TreeNode) int {
 	return res124
 }
 
-func getMax(root *TreeNode) int {
+func getMax(root *cig.TreeNode) int {
 	if root == nil {
 		return 0
 	}

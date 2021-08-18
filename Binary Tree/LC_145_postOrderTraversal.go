@@ -1,14 +1,16 @@
 package Binary_Tree
 
+import "Go-AC/cig"
+
 // 解法一: 迭代版本 -> 注意退栈时机和node的更新 -> 退栈时必须完成"加入res数组" 和 "遍历左子树" "遍历右子树" 共三个操作
-func postorderTraversal1(root *TreeNode) []int {
+func postorderTraversal1(root *cig.TreeNode) []int {
 	res := make([]int, 0)
 	if root == nil {
 		return res
 	}
 
-	stack := make([]*TreeNode, 0)
-	var pre *TreeNode
+	stack := make([]*cig.TreeNode, 0)
+	var pre *cig.TreeNode
 
 	for len(stack) > 0 || root != nil {
 		for root != nil {
@@ -30,14 +32,14 @@ func postorderTraversal1(root *TreeNode) []int {
 }
 
 // 解法二: 递归版本
-func postorderTraversal2(root *TreeNode) []int {
+func postorderTraversal2(root *cig.TreeNode) []int {
 	res := make([]int, 0)
 	if root == nil {
 		return res
 	}
 
-	var postOrder func(root *TreeNode)
-	postOrder = func(root *TreeNode) {
+	var postOrder func(root *cig.TreeNode)
+	postOrder = func(root *cig.TreeNode) {
 		if root == nil {
 			return
 		}
