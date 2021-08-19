@@ -1,5 +1,7 @@
 package subsequence
 
+// 编辑距离: 经典dp[i][j], 以i结尾的字串1和以j结尾的字串2, 最少需要的操作数
+// 注: 1.初始化的时候对各种0的情况初始化勿忘; 2.对于该处字符不等的情况,本质是 1)修改 2)删i 3)删j
 func minDistance(word1 string, word2 string) int {
 	m, n := len(word1), len(word2)
 	dp := make([][]int, m + 1)
