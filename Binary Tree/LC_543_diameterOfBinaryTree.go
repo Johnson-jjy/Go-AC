@@ -11,6 +11,7 @@ import "Go-AC/cig"
  * }
  */
 
+// 求二叉树的直径
 // 关键是理解题意: 二叉树的直径取自任意节点左右子树深度和的最大值
 var res int
 func diameterOfBinaryTree(root *cig.TreeNode) int {
