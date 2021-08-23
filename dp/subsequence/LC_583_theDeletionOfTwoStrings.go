@@ -1,5 +1,6 @@
 package subsequence
 
+// 两个字符串的删除操作
 // 动归1：利用LCS，求出两字符串的最长公共子序列后，再分别删除即可
 func minDistance1(word1 string, word2 string) int {
 	m, n := len(word1), len(word2)
@@ -41,6 +42,7 @@ func minDistance2(word1 string, word2 string) int {
 			if word1[i - 1] == word2[j - 1] {
 				dp[i][j] = dp[i - 1][j - 1]
 			} else {
+				// 其实可以不考虑这种情况,因为每次i或j都是只增加1个
 				cur := min(dp[i - 1][j] + 1, dp[i][j - 1] + 1)
 				dp[i][j] = min(cur, dp[i - 1][j - 1] + 2)
 			}
