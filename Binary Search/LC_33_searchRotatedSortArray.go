@@ -1,5 +1,7 @@
 package Binary_Search
 
+// 搜索旋转排序数组: 互不相同 -> 可直接从left和right出发进行判断
+// nums[mid]可能出现在两个位置,target可能出现在四个位置,每一个nums[mid]对应4个target位置,分类讨论即可
 func search1(nums []int, target int) int {
 	m := len(nums)
 	left := 0
