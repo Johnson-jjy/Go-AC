@@ -1,5 +1,6 @@
 package monotonic_stack
 
+// 下一个更大元素
 // 形如找到"下一个最大/小的数(大小或坐标)" -> 联想单调栈! -> 根据题目需求,本题栈中直接保存值
 func nextGreaterElement(nums1 []int, nums2 []int) []int {
 	store := make(map[int]int, len(nums1)) // 对于num1中相关数字的对应情况,用map保存
