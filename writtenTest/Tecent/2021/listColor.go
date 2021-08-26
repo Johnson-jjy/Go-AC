@@ -14,7 +14,7 @@ type ListNode struct{
  * @param a ListNode类 指向彩带的起点，val表示当前节点的val，next指向下一个节点
  * @return ListNode类一维数组
  */
-func solve( m int ,  a *ListNode ) []*ListNode {
+func solve( m int ,  a *ListNode) []*ListNode {
 	// write code here
 	res := make([]*ListNode, m)
 	tails := make([]*ListNode, m)
