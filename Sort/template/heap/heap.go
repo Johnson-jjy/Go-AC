@@ -25,7 +25,7 @@ func (h Heap)len() int {
 	return len(h)
 }
 
-// 比大小 -> 若未小根堆则改为less即可
+// 比大小 -> 若为小根堆则改为less即可
 func (h Heap)greater(i, j int) bool {
 	if h[i] > h[j] {
 		return true
