@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/rand"
 	"sort"
 	"strconv"
 	"strings"
@@ -94,6 +95,10 @@ func testMath() {
 	//int64最大最小值（int默认是int64）
 	fmt.Println(math.MaxInt64)
 	fmt.Println(math.MinInt64)
+	// 随机
+	sum := 100
+	target := rand.Intn(sum)
+	fmt.Println(target)
 }
 
 //copy
