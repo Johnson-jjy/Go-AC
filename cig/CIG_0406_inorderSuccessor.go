@@ -9,6 +9,49 @@ package cig
  * }
  */
 
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 后继者: 注意这种题目必须先保存head(或者说pre)的情况,然后对于每一个节点,都需要对其左右子节点进行重新连接 -> 本质类似于把二叉树结构改为链表结构
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+	var res *TreeNode
+	var pre *TreeNode
+
+	var inorder func(root *TreeNode) bool
+	inorder = func(root *TreeNode) bool {
+		if root == nil {
+			return false
+		}
+		if inorder(root.Left) {
+			return true
+		}
+		if pre == nil {
+			pre = root
+		} else {
+			if pre == p {
+				res = root
+				return true
+			}
+			pre.Right = root
+			root.Left = pre
+			pre = root
+		}
+		if inorder(root.Right) {
+			return true
+		}
+		return false
+	}
+
+	inorder(root)
+
+	return res
+}
+
 // 本题可作为关于go指针的探讨题
 
 // 以下代码会出问题,可拿来探究指针奥秘
@@ -120,24 +163,3 @@ func findtarget(root *TreeNode, t *TreeNode) *TreeNode {
 	pre = root
 	return findtarget(root.Left, t)
 }
-
-// Java能过但go过不了
-//var res *TreeNode
-//var flag = false
-//
-//func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
-//	if root == nil || p == nil {
-//		return nil
-//	}
-//	inorderSuccessor(root.Left, p)
-//	if flag {
-//		res = root
-//		flag = false
-//		return res
-//	}
-//	if root.Val == p.Val {
-//		flag = true
-//	}
-//	inorderSuccessor(root.Right, p)
-//	return res
-//}
