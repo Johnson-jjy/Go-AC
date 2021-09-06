@@ -1,5 +1,6 @@
 package subsequence
 
+// 最长回文子串
 func longestPalindrome(s string) string {
 	res := 1
 	m := len(s)
