@@ -1,6 +1,6 @@
 package cig
 
-// 思路:每次二分找头结点;另可利用go的切片性质直接递归
+// 思路:每次二分找头结点;另可利用go的切片性质直接递归 -> 注意直接递归时,需处理的右数组应该是mid+1
 var store []int
 
 func sortedArrayToBST(nums []int) *TreeNode {
@@ -46,3 +46,21 @@ func getNode(start int, end int, root *TreeNode) *TreeNode {
 	return node
 }
 
+// go切片直接递归
+func sortedArrayToBST2(nums []int) *TreeNode {
+	if len(nums) == 0 {
+		return nil
+	}
+	//fmt.Println(nums)
+	mid := len(nums)/2
+	cur := &TreeNode {
+		nums[mid],
+		nil,
+		nil,
+	}
+	//fmt.Println(cur.Val)
+	cur.Left = sortedArrayToBST(nums[:mid])
+	cur.Right = sortedArrayToBST(nums[mid + 1:])
+
+	return cur
+}

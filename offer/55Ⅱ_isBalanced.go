@@ -8,6 +8,9 @@ package offer
  *     Right *TreeNode
  * }
  */
+
+// 平衡二叉树
+// 注意求平衡时;不仅要利用当前left和right的深度进行判断,还要对每个节点都做如下判断
 func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true

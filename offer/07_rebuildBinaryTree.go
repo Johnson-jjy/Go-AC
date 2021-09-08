@@ -12,6 +12,7 @@ type TreeNode struct {
 var pre []int
 var in []int
 
+// 重建二叉树
 func buildTree1(preorder []int, inorder []int) *TreeNode {
 	m := len(preorder)
 	if m == 0 {

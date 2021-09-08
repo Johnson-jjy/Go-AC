@@ -8,6 +8,8 @@ package cig
  *     Right *TreeNode
  * }
  */
+
+// 检查平衡性
 func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true

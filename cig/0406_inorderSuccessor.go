@@ -8,15 +8,6 @@ package cig
  *     Right *TreeNode
  * }
  */
-
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
 // 后继者: 注意这种题目必须先保存head(或者说pre)的情况,然后对于每一个节点,都需要对其左右子节点进行重新连接 -> 本质类似于把二叉树结构改为链表结构
 func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
 	var res *TreeNode

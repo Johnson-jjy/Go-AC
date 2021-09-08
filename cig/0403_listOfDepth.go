@@ -1,6 +1,6 @@
 package cig
 
-
+// 特定深度节点链表 -- 本质层序遍历
 // Definition for a binary tree node.
 type TreeNode struct {
     Val int
@@ -8,13 +8,11 @@ type TreeNode struct {
     Right *TreeNode
 }
 
-
 //Definition for singly-linked list.
 type ListNode struct {
     Val int
     Next *ListNode
 }
-
 
 // BFS + 链表，注意不同的节点需要进行不同的声明
 func listOfDepth(tree *TreeNode) []*ListNode {

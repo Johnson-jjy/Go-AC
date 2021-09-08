@@ -13,7 +13,9 @@ import (
  * }
  */
 
+// 合法二叉搜索树
 // 主要思想借鉴了CIG_0404: 每次都求当前节点对应左子树的最大值和右子树的最小值
+// 注意:如果左节点或者右节点为空,就不要再递归了,再递归无法得到合理返回值(即使返回最大或者最小也都不妥)
 func isValidBST(root *TreeNode) bool {
 	if root == nil {
 		return true

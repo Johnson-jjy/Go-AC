@@ -8,6 +8,8 @@ package offer
  *     Right *TreeNode
  * }
  */
+
+// 二叉树的镜像
 // 解法一: 递归
 func mirrorTree1(root *TreeNode) *TreeNode {
 	if root == nil {

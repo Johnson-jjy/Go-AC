@@ -9,7 +9,9 @@ package offer
  * }
  */
 
-
+// 从上到下打印二叉树Ⅲ
+// 放入cur的顺序调整为逆序即可
+// 另: 勿忘对于切片的添加操作 -- append...
 func levelOrder3(root *TreeNode) [][]int {
 	res := make([][]int, 0)
 

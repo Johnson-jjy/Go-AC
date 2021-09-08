@@ -9,10 +9,12 @@ package offer
  * }
  */
 
+// 二叉树中和为某一值的路径
 // 思路: 递归即可
 // 注: 看清题目,明确所指的路径是什么
 // 注: 传的是复制,故不需要再做回溯
 // 另: 可用闭包的方式写,继而不用定义相应的全局变量
+// 解一: DFS
 var res [][]int
 
 func pathSum(root *TreeNode, target int) [][]int {
@@ -45,3 +47,5 @@ func backtrack_(root *TreeNode, path []int, total int) {
 	backtrack_(root.Left, path, total)
 	backtrack_(root.Right, path, total)
 }
+
+// 解二: 待补充BFS

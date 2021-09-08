@@ -1,6 +1,7 @@
-package Binary_Tree
+package offer
 
 // 对称二叉树
+// 解一: 递归
 func isSymmetric1(root *TreeNode) bool {
 	if root == nil {
 		return true
@@ -8,20 +9,21 @@ func isSymmetric1(root *TreeNode) bool {
 	return check(root.Left, root.Right)
 }
 
-func check(left *TreeNode, right *TreeNode) bool {
-	if left == nil && right == nil {
+func checkSymmetric(p *TreeNode, q *TreeNode) bool {
+	if p == nil && q == nil {
 		return true
 	}
-	if left == nil || right == nil {
+	if p == nil || q == nil {
 		return false
 	}
-	if left.Val != right.Val {
+	if p.Val != q.Val {
 		return false
 	}
-	return check(left.Left, right.Right) && check(left.Right, right.Left)
+
+	return checkSymmetric(p.Left, q.Right) && checkSymmetric(p.Right, q.Left)
 }
 
-// 解二: BFS -> 对每次要操作的node进行判断和添加
+// 解二: BFS -> 不要拘泥于size; 每次只取要操作的节点进行判断即可
 func isSymmetric2(root *TreeNode) bool {
 	if root == nil {
 		return true
