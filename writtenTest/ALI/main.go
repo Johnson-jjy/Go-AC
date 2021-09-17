@@ -23,4 +23,10 @@ func main()  {
 	defer func() { n.pprint() }()
 
 	n = 3
+	//n.print()
+	//n.pprint()
+	//go func() {n.print()}()
+	//go func() {n.pprint()}()
+
+	//time.Sleep(time.Second)
 }
