@@ -1,6 +1,7 @@
 package offer_
 
 // 从根节点到叶节点的路径数字之和
+
 // 解一: 前序遍历(其实应该本质上顺序不影响) -- 类似于求minDepth;
 // 只有当本节点是叶子节点时才做处理,同理,对非nil的情况则直接不往下递归
 func sumNumbers1(root *TreeNode) int {
