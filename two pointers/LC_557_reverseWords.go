@@ -1,4 +1,4 @@
-package Binary_Tree
+package two_pointers
 
 // 反转字符串中的单词Ⅲ
 
@@ -15,7 +15,7 @@ func reverseWords(s string) string {
 		for end < len(t) && t[end] != ' ' {
 			end++
 		}
-		reverse(t, start, end - 1)
+		reverse_557(t, start, end - 1)
 		for end < len(t) && t[end] == ' ' {
 			end++
 		}
@@ -25,7 +25,7 @@ func reverseWords(s string) string {
 	return string(t)
 }
 
-func reverse(s []byte, start int, end int) {
+func reverse_557(s []byte, start int, end int) {
 	for start <= end {
 		s[start], s[end] = s[end], s[start]
 		start++
