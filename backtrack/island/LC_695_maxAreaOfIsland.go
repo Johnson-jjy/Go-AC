@@ -1,7 +1,8 @@
 package island
 
-// 岛屿最大面积
-// 注意每次求得的sum,因为会返回,故直接赋给if中的sum即可,不需要+=
+// 岛屿的最大面积
+// 注意: 1.每次求得的sum, 因为会返回, 故直接赋给if中的sum即可, 不需要+=
+// 2. 每次新判断grid为1时才能进入递归
 func maxAreaOfIsland(grid [][]int) int {
 	res := 0
 	m := len(grid)
